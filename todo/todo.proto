@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "../todo";
+
+message TodoContent {
+    int64 id = 1;
+    string title = 2;
+}
+
+service TodoService {
+    rpc GetTodo (google.protobuf.Empty) returns (TodoContent);
+}
